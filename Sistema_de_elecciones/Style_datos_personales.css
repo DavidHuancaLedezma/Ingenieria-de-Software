@@ -1,0 +1,59 @@
+h1 {
+    text-align: center;
+    margin: 0;
+}
+h3 {
+    margin: 0;
+    text-align: center;
+}
+hr {
+    width: 250px;
+}
+main {
+    display: flex;
+    justify-content: center;
+
+}
+.datos {
+    width: 370px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+}
+p {
+    margin: 35px;
+}
+button {
+    margin: 40px;
+    width: 170px;
+    height: 50px;
+    
+}
+.regresar {
+    background-color: rgb(99, 78, 133);
+    border-radius: 15px;
+    color: white;
+}
+.siguiente {
+    background-color: rgb(54, 54, 252);
+    border-radius: 15px;
+    color: white;
+}
+.margen {
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+}
+.contenedor {
+    border: solid 5px rgb(150, 144, 144);
+    padding: 10px;
+    width: 650px;
+    height: 500px;
+    border-radius: 10px;
+}
+img {
+    width: 120px;
+    height: 120px;
+}
