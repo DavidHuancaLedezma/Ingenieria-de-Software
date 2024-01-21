@@ -87,3 +87,55 @@ img {
         transform: translateY(-1rem);
     }
 }
+@media only screen and (max-width:500px) {
+    /*Configuración para movil*/
+    body {
+        background: url(image/fondo_perfil_elector.jpg) no-repeat;
+        background-size: cover; 
+        height: 760px;
+    }
+    .margen {
+        display: flex;
+        justify-content: center;
+        padding: 25px;
+    }
+    .contenedor {
+        width: 320px;
+        height: 630px;
+        margin: 7px 10px 7px 50px;
+    }
+    p {
+        margin: 35px 5px 35px;
+        font-size: 13px;
+    }
+    main {
+        display: flex;
+        flex-direction: column-reverse;
+        
+    }
+    h3 {
+        text-align: center;
+    }
+    button {
+        margin: 0;
+        width: 140px;
+        height: 45px;
+        
+    }
+    .imagen_de_salir {
+        width: 55px;
+        height: 55px;
+        margin: 0 50px 0 40px;
+        animation: float 2s linear infinite;
+        
+    }
+    .caja_votacion {
+        width: 55px;
+        height: 55px;
+        margin: 0 40px 0 50px;
+        animation: float 2s linear infinite;
+    }
+    figure img {
+       margin: 0 56px 0;
+    }
+}
