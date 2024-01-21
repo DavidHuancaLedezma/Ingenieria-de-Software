@@ -1,3 +1,8 @@
+body {
+    background: url(image/fondo_perfil_elector.jpg) no-repeat;
+    background-size: cover;
+    height: 623px;
+}
 h1 {
     text-align: center;
     margin: 0;
@@ -21,24 +26,25 @@ main {
 footer {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 p {
     margin: 35px;
 }
 button {
-    margin: 40px;
+    margin: 0px 40px 0;
     width: 170px;
     height: 50px;
     
 }
 .regresar {
     background-color: rgb(99, 78, 133);
-    border-radius: 15px;
+    border-radius: 20px;
     color: white;
 }
 .siguiente {
     background-color: rgb(54, 54, 252);
-    border-radius: 15px;
+    border-radius: 20px;
     color: white;
 }
 .margen {
@@ -47,13 +53,37 @@ button {
     padding: 25px;
 }
 .contenedor {
-    border: solid 5px rgb(150, 144, 144);
+    border: solid 5px blue;
+    box-shadow: 0px 0px 20px blue,
+                0px 0px 20px blue inset;
     padding: 10px;
     width: 650px;
     height: 500px;
-    border-radius: 10px;
+    border-radius: 15px;
+    background-color: white;
 }
 img {
     width: 120px;
     height: 120px;
+}
+.imagen_de_salir {
+    width: 60px;
+    height: 60px;
+    margin: 0 150px 0 95px;
+    animation: float 2s linear infinite;
+    
+}
+.caja_votacion {
+    width: 60px;
+    height: 60px;
+    margin: 0 95px 0 10px;
+    animation: float 2s linear infinite;
+}
+@keyframes float {
+    0%, 100%{
+        transform: translateY(0rem);
+    }
+    50%{
+        transform: translateY(-1rem);
+    }
 }
