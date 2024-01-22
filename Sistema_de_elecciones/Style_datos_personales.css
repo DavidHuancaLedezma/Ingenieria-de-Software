@@ -1,15 +1,15 @@
 body {
-    background: url(image/fondo_perfil_elector.jpg) no-repeat;
-    background-size: cover;
-    height: 623px;
+    background: linear-gradient(90deg,#112124,#2a6c71,#112124);
 }
 h1 {
     text-align: center;
     margin: 0;
+    color: white;
 }
 h3 {
     margin: 0;
     text-align: center;
+    color: white;
 }
 hr {
     width: 250px;
@@ -30,6 +30,7 @@ footer {
 }
 p {
     margin: 35px;
+    color: white;
 }
 button {
     margin: 0px 40px 0;
@@ -38,12 +39,12 @@ button {
     
 }
 .regresar {
-    background-color: rgb(99, 78, 133);
+    background: linear-gradient(90deg,#112124,#2a6c71,#112124);
     border-radius: 20px;
     color: white;
 }
 .siguiente {
-    background-color: rgb(54, 54, 252);
+    background: linear-gradient(90deg,#112124,#2a6c71,#112124);
     border-radius: 20px;
     color: white;
 }
@@ -53,14 +54,15 @@ button {
     padding: 25px;
 }
 .contenedor {
-    border: solid 5px blue;
-    box-shadow: 0px 0px 20px blue,
-                0px 0px 20px blue inset;
+    border: solid 5px #2a6c71;
+    box-shadow: 0px 0px 30px #2a6c71,
+                0px 0px 30px #2a6c71 inset;
     padding: 10px;
     width: 650px;
     height: 500px;
     border-radius: 15px;
-    background-color: white;
+
+
 }
 img {
     width: 120px;
@@ -90,9 +92,7 @@ img {
 @media only screen and (max-width:500px) {
     /*Configuración para movil*/
     body {
-        background: url(image/fondo_perfil_elector.jpg) no-repeat;
-        background-size: cover; 
-        height: 760px;
+        background: linear-gradient(90deg,#112124,#2a6c71,#112124);
     }
     .margen {
         display: flex;
