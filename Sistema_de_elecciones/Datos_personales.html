@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sistema de Elecciones</title>
     <link rel="stylesheet" href="Style_datos_personales.css">
+    <link rel="shortcut icon" href="image/caja.png" type="image/x-icon">
 </head>
 <body>
     <div class="margen">
@@ -32,8 +33,13 @@
             <footer>
                 <img src="image/salir.png" class="imagen_de_salir" alt="">
                 <img src="image/caja_votacion.png" class="caja_votacion" alt="">
-                <a href="inico_elector.html" class="regresar">Regresar atras</a>
+                <button onclick="volver_atras()" class="regresar">Regresar atras</button>
                 <button class="siguiente">Ir a votar</button>
+                <script>
+                    function volver_atras(){
+                        window.location.href = "inico_elector.html"
+                    }
+                </script>
             </footer>
         </div>
     </div>
