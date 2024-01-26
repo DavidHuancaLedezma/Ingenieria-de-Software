@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+img{
+    height: 70px;
+    margin-right: 10px;
+}
+a{
+    text-decoration: none;
+    color:#fff;
+}
+
+.header{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px;
+    background-color: #020202;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+
+}
+.header_a {
+    display: flex;
+    align-items: center;
+}
+.nav a{
+   position: relative;
+   margin-right: 20px;
+   font-size: 1.1em;
+}
+.header_a h2:hover{
+    color: aqua;
+}
+.nav a:hover{
+    color: #e9da0c;
+}
+@media (max-width: 700px){
+    header{
+        flex-direction: column;
+    }
+    nav{
+        padding: 10px 0px;
+    }
+}
+/*hasta aca el encabezamiento en css*/
