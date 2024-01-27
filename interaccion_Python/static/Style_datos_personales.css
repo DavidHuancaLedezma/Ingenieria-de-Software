@@ -1,0 +1,154 @@
+body {
+    background: linear-gradient(90deg, #112124, #2a6c71, #112124);
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+    color: white;
+    font-size: 3em;
+}
+
+h3 {
+    margin: 0;
+    text-align: center;
+    color: white;
+    font-size: 1.8em;
+}
+
+hr {
+    width: 100%;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.datos {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+p {
+    margin: 20px 0;
+    color: white;
+    font-size: 1.3em;
+}
+
+button {
+    width: 170px;
+    height: 50px;
+    font-size: 1.2em;
+}
+
+.regresar,
+.siguiente {
+    background: linear-gradient(90deg, #112124, #2a6c71, #112124);
+    border-radius: 20px;
+    color: white;
+    margin: 0 10px; /* Espacio entre los botones */
+}
+
+.contenedor {
+    border: solid 5px #2a6c71;
+    box-shadow: 0px 0px 30px #2a6c71, 0px 0px 30px #2a6c71 inset;
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.imagenes-container {
+    display: flex;
+    align-items: center; /* Alinear verticalmente las imágenes */
+    margin-bottom: 20px;
+}
+
+.img-wrapper {
+    margin: 0 20px;
+}
+
+.img-wrapper:first-child {
+    margin-right: 10px; /* Espacio entre las imágenes */
+}
+
+.img-wrapper:last-child {
+    margin-left: 10px; /* Espacio entre las imágenes */
+}
+
+img {
+    width: 120px;
+    height: 120px;
+}
+.imagen_de_salir,
+.caja_votacion {
+    width: 60px;
+    height: 60px;
+    animation: float 2s linear infinite;
+}
+
+.botones-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0rem);
+    }
+    50% {
+        transform: translateY(-1rem);
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    h1 {
+        font-size: 2.5em;
+    }
+    
+    h3 {
+        font-size: 1.5em;
+    }
+    
+    p {
+        font-size: 1em;
+        margin: 15px 0;
+    }
+    
+    button {
+        width: 40%;
+        height: 40px;
+        font-size: 0.9em;
+    }
+
+    .imagen_de_salir,
+    .caja_votacion {
+        width: 55px;
+        height: 55px;
+    }
+
+    .imagenes-container {
+        margin-bottom: 10px;
+    }
+}
