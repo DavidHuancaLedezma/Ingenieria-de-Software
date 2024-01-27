@@ -1,0 +1,230 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Elecciones</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='test.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='image/caja.png') }}" type="image/x-icon">
+        <style>
+        body{
+            background: linear-gradient(90deg,#112124, #2a6c71 ,#112124);
+    box-shadow: 0 8px 10px rgba(0,0,0,.5);
+        }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        nav>a {
+            padding: 1rem;
+        }
+        .datos-totales {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 60px; /* Adjust the margin as needed */
+            margin-bottom: 20px; /* Additional margin for space */
+        }
+
+        .impresion-totales {
+
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+
+            margin: 0 auto; /* Center horizontally */
+        }
+
+        .volver-e-imprimir {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .vei {
+
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+
+            margin: 20px auto; /* Center horizontally */
+        }
+        .css-button-shadow-border--grey {
+            min-width: 130px;
+            height: 40px;
+            color: #fff;
+            padding: 5px 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+            outline: none;
+            border-radius: 5px;
+            border: none;
+            box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+            background: #495057;
+          }
+
+          .css-button-shadow-border--grey:hover {
+            background-color: #6c757d;
+          }
+
+          .css-button-shadow-border--grey:active {
+            top: 2px;
+          }
+        main {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .parte-izquierda,
+        .parte-derecha,
+        .parte-nulo,
+        .parte-blanco{
+            width: 100%;
+            height: 50vh;
+        }
+
+        .parte-izquierda {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .parte-nulo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .parte-blanco {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .casi-izquierda {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .parte-izquierda,.casi-izquierda, .parte-blanco, .parte-nulo>p {
+            padding: 2rem;
+            font-size: 1.6rem;
+        }
+
+        @media (min-width: 1000px) {
+            main {
+                flex-direction: row;
+            }
+
+            .parte-izquierda,
+            .parte-derecha,
+            .parte-blanco,
+            .parte-nulo {
+                width: 50%;
+                height: 100vh;
+            }
+
+
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="header_a">
+                <img src="{{ url_for('static', filename='image/icono.png') }}" alt="">
+            <h2>Elecciones</h2>
+        </a>
+        <nav class="nav">
+
+            <a href="#">Corte Electoral</a>
+        </nav>
+    </header>
+    <main>
+        <div class="parte-izquierda">
+           <div class="datos c1">
+                <img src="{{ url_for('static', filename='image/luis_arce.jpg') }}" alt="">
+            <h2 class="candidato-arce">Luis Arce </h2>
+            <h2 >MAS</h2>
+            <h2>50%</h2>
+            <h2 class="votos-luis-arce">5000</h2>
+           </div>
+        </div>
+        <div class="casi-izquierda">
+            <div class="datos c2">
+                <img src="{{ url_for('static', filename='image/chi.png') }}" alt="">
+                <h2>Chi </h2>
+                <h2>LTB</h2>
+                <h2>20%</h2>
+                <h2>3000</h2>
+               </div>
+        </div>
+        <div class="parte-nulo">
+            <div class="datos nulo">
+                <img src="{{ url_for('static', filename='image/nulo.png') }}" alt="">
+                <h2>Votos Nulos </h2>
+
+                <h2>20%</h2>
+                <h2>3000</h2>
+               </div>
+        </div>
+        <div class="parte-blanco">
+            <div class="datos blnco">
+                <img src="{{ url_for('static', filename='image/blanco.png') }}" alt="">
+                <h2>Votos en Blanco </h2>
+
+                <h2>10%</h2>
+                <h2>1000</h2>
+               </div>
+        </div>
+
+    </main>
+    <div class="datos-totales">
+        <div class="impresion-totales">
+            <h2>TOTALES DE VOTOS=1000</h2>
+            <h2>TOTALE DE PORCENTAJE 100%</h2>
+        </div>
+    </div>
+    <div class="volver-e-imprimir">
+        <div class="vei">
+            <button class="volver css-button-shadow-border--grey">Volver</button>
+            <button class="imprimir css-button-shadow-border--grey">Imprimir</button>
+        </div>
+    </div>
+    <script>
+    <script>
+        function imprimir() {
+            // Obtener los datos que quieres imprimir
+            var nombreCandidato = document.querySelector('.candidato-arce').textContent;
+            var votosCandidato = document.querySelector('.votos-luis-arce').textContent;
+
+            // Crear el formato de impresión
+            var contenidoImprimir = 'Votos de ' + nombreCandidato + ': ' + votosCandidato;
+
+            // Encontrar el elemento donde se mostrará la impresión (puedes ajustar esto según tu estructura)
+            var contenedorImpresion = document.getElementById('impresion-container');
+
+            // Agregar el formato de impresión al contenedor
+            contenedorImpresion.innerHTML = '<h1>' + contenidoImprimir + '</h1>';
+
+            // Abrir la ventana de impresión y llamar a la función print()
+            window.print();
+        }
+</body>
+
+</html>

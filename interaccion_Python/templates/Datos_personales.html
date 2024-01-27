@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Elecciones</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='Style_datos_personales.css') }}"/>
+    <link rel="shortcut icon" href="{{ url_for('static',filename='image/caja.png') }}" type="image/x-icon">
+  </head>
+  <body>
+    <div class="margen">
+      <div class="contenedor">
+        <header>
+          <h1>Datos personales</h1>
+          <hr />
+        </header>
+        <main>
+          <div class="datos">
+            <p>Nombre completo:{{elector.get_nombre()}}</p>
+            <p>Cédula de identidad:{{elector.get_ci()}}</p>
+            <p>Fecha de nacimiento:{{elector.get_fecha_nacimiento()}}</p>
+            <p>Género:{{elector.get_genero()}}</p>
+            <p>Estado de votación:{{elector.get_estado()}}</p>
+          </div>
+          <figure>
+            <img src="" alt="" />
+            <figcaption>
+              <h3>Foto</h3>
+            </figcaption>
+          </figure>
+        </main>
+        <footer>
+          <img src="{{ url_for('static',filename='image/salir.png') }}" class="imagen_de_salir" alt=""/>
+          <img src="{{ url_for('static',filename='image/caja_votacion.png') }}" class="caja_votacion" alt=""/>
+
+          <form action="{{ url_for('regresar_al_inicio') }}" method="post">
+            <button type="submit" class="regresar">Regresar atras</button>
+          </form>
+
+          <button class="siguiente">Ir a votar</button>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
