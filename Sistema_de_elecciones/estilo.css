@@ -113,6 +113,17 @@ main {
     justify-content: center;
 }
 
+.datos img,
+.luis_arce img,
+.chi img,
+.nulo img,
+.blanco img {
+    width: 100px; /* Ajusta el tamaño según tus necesidades */
+    height: 100px; /* Ajusta el tamaño según tus necesidades */
+    display: block;
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
 @media (min-width: 1000px) {
     main {
         flex-direction: row;

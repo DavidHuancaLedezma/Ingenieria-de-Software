@@ -1,141 +1,154 @@
 body {
-    background: linear-gradient(90deg,#112124,#2a6c71,#112124);
+    background: linear-gradient(90deg, #112124, #2a6c71, #112124);
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
 }
+
 h1 {
     text-align: center;
     margin: 0;
     color: white;
+    font-size: 3em;
 }
+
 h3 {
     margin: 0;
     text-align: center;
     color: white;
+    font-size: 1.8em;
 }
+
 hr {
-    width: 250px;
+    width: 100%;
 }
+
 main {
     display: flex;
     justify-content: center;
-
+    align-items: center;
+    flex-direction: column;
 }
+
 .datos {
-    width: 370px;
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
 }
 
 footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
+    margin-top: 20px;
 }
+
 p {
-    margin: 35px;
+    margin: 20px 0;
     color: white;
+    font-size: 1.3em;
 }
+
 button {
-    margin: 0px 40px 0;
     width: 170px;
     height: 50px;
-    
+    font-size: 1.2em;
 }
-.regresar {
-    background: linear-gradient(90deg,#112124,#2a6c71,#112124);
-    border-radius: 20px;
-    color: white;
-}
+
+.regresar,
 .siguiente {
-    background: linear-gradient(90deg,#112124,#2a6c71,#112124);
+    background: linear-gradient(90deg, #112124, #2a6c71, #112124);
     border-radius: 20px;
     color: white;
+    margin: 0 10px; /* Espacio entre los botones */
 }
-.margen {
-    display: flex;
-    justify-content: center;
-    padding: 25px;
-}
+
 .contenedor {
     border: solid 5px #2a6c71;
-    box-shadow: 0px 0px 30px #2a6c71,
-                0px 0px 30px #2a6c71 inset;
+    box-shadow: 0px 0px 30px #2a6c71, 0px 0px 30px #2a6c71 inset;
     padding: 10px;
-    width: 650px;
-    height: 500px;
+    width: 100%;
+    height: auto;
     border-radius: 15px;
-
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
+
+.imagenes-container {
+    display: flex;
+    align-items: center; /* Alinear verticalmente las imágenes */
+    margin-bottom: 20px;
+}
+
+.img-wrapper {
+    margin: 0 20px;
+}
+
+.img-wrapper:first-child {
+    margin-right: 10px; /* Espacio entre las imágenes */
+}
+
+.img-wrapper:last-child {
+    margin-left: 10px; /* Espacio entre las imágenes */
+}
+
 img {
     width: 120px;
     height: 120px;
 }
-.imagen_de_salir {
-    width: 60px;
-    height: 60px;
-    margin: 0 150px 0 95px;
-    animation: float 2s linear infinite;
-    
-}
+.imagen_de_salir,
 .caja_votacion {
     width: 60px;
     height: 60px;
-    margin: 0 95px 0 10px;
     animation: float 2s linear infinite;
 }
+
+.botones-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
 @keyframes float {
-    0%, 100%{
+    0%, 100% {
         transform: translateY(0rem);
     }
-    50%{
+    50% {
         transform: translateY(-1rem);
     }
 }
-@media only screen and (max-width:500px) {
-    /*Configuración para movil*/
-    body {
-        background: linear-gradient(90deg,#112124,#2a6c71,#112124);
+
+@media only screen and (max-width: 500px) {
+    h1 {
+        font-size: 2.5em;
     }
-    .margen {
-        display: flex;
-        justify-content: center;
-        padding: 25px;
-    }
-    .contenedor {
-        width: 320px;
-        height: 630px;
-        margin: 7px 10px 7px 50px;
-    }
-    p {
-        margin: 35px 5px 35px;
-        font-size: 13px;
-    }
-    main {
-        display: flex;
-        flex-direction: column-reverse;
-        
-    }
+    
     h3 {
-        text-align: center;
+        font-size: 1.5em;
     }
+    
+    p {
+        font-size: 1em;
+        margin: 15px 0;
+    }
+    
     button {
-        margin: 0;
-        width: 140px;
-        height: 45px;
-        
+        width: 40%;
+        height: 40px;
+        font-size: 0.9em;
     }
-    .imagen_de_salir {
-        width: 55px;
-        height: 55px;
-        margin: 0 50px 0 40px;
-        animation: float 2s linear infinite;
-        
-    }
+
+    .imagen_de_salir,
     .caja_votacion {
         width: 55px;
         height: 55px;
-        margin: 0 40px 0 50px;
-        animation: float 2s linear infinite;
     }
-    figure img {
-       margin: 0 56px 0;
+
+    .imagenes-container {
+        margin-bottom: 10px;
     }
 }
