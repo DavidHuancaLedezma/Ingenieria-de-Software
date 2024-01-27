@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papeleta de Elecciones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(90deg, #112124, #2a6c71, #112124);
+            margin: 0;
+            padding: 20px;
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+        }
+
+        .candidate {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            color: #000;
+        }
+
+        .candidate img {
+            max-width: 100px;
+            max-height: 100px;
+            margin-right: 10px;
+        }
+
+        .vote-button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Papeleta de Elecciones</h1>
+
+<div id="candidates-container"></div>
+<label>
+    <input type="radio" name="voto" id="voto-nulo"> Voto Nulo
+</label>
+<label>
+    <input type="radio" name="voto" id="voto-blanco"> Voto en Blanco
+</label>
+<button class="vote-button" onclick="enviarVotos()">Enviar Votos</button>
+
+<script>
+        const candidates = [
+            { name: 'Candidato 1', image: "logo2.jpg", description: 'Descripción del candidato y sus propuestas.', votes: 0 },
+            { name: 'Candidato 2', image: "logo3.jpg", description: 'Descripción del candidato y sus propuestas.', votes: 0 },
+        ];
+
+        function generateCandidateHTML(candidate) {
+            return `
+                <div class="candidate">
+                    <img src="static/img/${candidate.image}" alt="${candidate.name}">
+                    <div>
+                        <h2>${candidate.name}</h2>
+                        <p>${candidate.description}</p>
+                    </div>
+                    <input type="radio" name="voto" value="${candidate.name}">
+                </div>
+            `;
+        }
+
+        function showCandidates() {
+            const candidatesContainer = document.getElementById('candidates-container');
+            candidates.forEach(candidate => {
+                candidatesContainer.innerHTML += generateCandidateHTML(candidate);
+            });
+        }
+
+        function votar(candidato) {
+            const candidate = candidates.find(candidate => candidate.name === candidato);
+            document.getElementById('voto-nulo').checked = false;
+            document.getElementById('voto-blanco').checked = false;
+            candidate.votes++;
+        }
+
+        function enviarVotos() {
+            const selectedCandidate = document.querySelector('input[name="voto"]:checked');
+            const votoNulo = document.getElementById('voto-nulo').checked;
+            const votoBlanco = document.getElementById('voto-blanco').checked;
+
+            if (!selectedCandidate && !votoNulo && !votoBlanco) {
+                alert('Por favor, selecciona un candidato, voto nulo o voto en blanco antes de enviar.');
+            } else {
+                candidates.forEach(candidate => {
+                    if (selectedCandidate && selectedCandidate.value === candidate.name) {
+                        candidate.votes++;
+                    }
+                });
+
+                if (votoNulo) {
+                    console.log('Voto Nulo');
+                    // Aquí podrías enviar la información de voto nulo al servidor si estás trabajando con uno.
+                } else if (votoBlanco) {
+                    console.log('Voto en Blanco');
+                    // Aquí podrías enviar la información de voto en blanco al servidor si estás trabajando con uno.
+                } else {
+                    candidates.forEach(candidate => {
+                        if (candidate.votes > 0) {
+                            console.log(`${candidate.name}: ${candidate.votes} votos`);
+                            // Aquí podrías enviar la información de los votos al servidor si estás trabajando con uno.
+                        }
+                    });
+                }
+            }
+        }
+
+        window.onload = showCandidates;
+    </script>
+
+</body>
+</html>
