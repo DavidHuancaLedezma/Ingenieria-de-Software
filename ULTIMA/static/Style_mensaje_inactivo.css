@@ -1,0 +1,13 @@
+body{
+    background: linear-gradient(90deg,#112124,#2a6c71,#112124);
+}
+p{
+    color: white;
+    text-align: center;
+    font-size: 60px;
+    margin: 20px;
+    flex-wrap: wrap;
+}
+button {
+    opacity: 0;
+}
