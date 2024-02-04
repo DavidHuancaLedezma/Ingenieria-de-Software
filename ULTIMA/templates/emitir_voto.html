@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papeleta de Elecciones</title>
+    <style>
+
+           body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(90deg, #112124, #2a6c71, #112124);
+            margin: 0;
+            padding: 20px;
+            box-shadow: 0 8px 10px rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+        }
+        input[type="radio"]{
+            width:50px;
+            height:50px;
+
+        }
+.candidate  ,.voto-blanco,.voto-nulo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            color: #000;
+            width: 500px;
+            margin: 10px auto;
+        }
+
+       .candidate img ,.voto-blanco img ,.voto-nulo img {
+            max-width: 100px;
+            max-height: 100px;
+            margin-right: 10px;
+        }
+
+        .vote-button {
+            background: linear-gradient(red,#EDBB99);
+            color: #fff;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+            font-size: 20px;
+
+        }
+        .marco{
+            border: 3px solid black;
+        }
+        .notification {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999; /* Ajusta este valor según sea necesario para asegurar que esté encima de todo */
+            background-color: #f44336;
+            color: white;
+            text-align: center;
+            padding: 26px;
+            font-size: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Papeleta de Elecciones</h1>
+<form id="miFormulario" action="{{ url_for('procesar_voto') }}" method="post" class="form">
+
+
+    <div id="candidates-container">
+        <div class="candidate">
+            <img src="{{ url_for('static', filename='image/luis_arce.jpg') }}" alt="Candidato 1" class="marco">
+            <div>
+                <h2>Luis Arce Catacora</h2>
+                <p>Movimiento Al Socialismo </p>
+            </div>
+            <input type="radio" name="voto" value="candidato_1">
+        </div>
+
+        <div class="candidate">
+            <img src="{{ url_for('static', filename='image/logo3.png') }}" alt="Candidato 2" class="marco">
+            <div>
+                <h2>Chi Hyun Chung</h2>
+                <p>Partido Democrata Cristiano</p>
+            </div>
+            <input type="radio" name="voto" value="candidato_2">
+        </div>
+    </div>
+
+
+    </div>
+
+    <label class="voto-nulo">
+        <img src="{{ url_for('static', filename='image/nulo.png') }}" alt="votoNulo" class="marco">
+        <div>
+            <h2>Voto Nulo</h2>
+            <p>Disconforme con las Elecciones</p>
+        </div>
+        <input type="radio" name="voto" value="voto_nulo">
+    </label>
+
+    <label class="voto-blanco">
+        <img src="{{ url_for('static', filename='image/votoBlanco.png') }}" alt="votoNulo" class="marco">
+        <div>
+            <h2>Voto Blanco</h2>
+            <p>Disconforme con los Candidatos</p>
+        </div>
+        <input type="radio" name="voto" value="voto_blanco">
+    </label>
+    <button class="vote-button" type="submit">Enviar Voto</button>
+
+</form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('miFormulario');
+    form.addEventListener('submit', function(event) {
+        const selectedCandidate = document.querySelector('input[name="voto"]:checked');
+        const votoNulo = document.querySelector('.voto-nulo input').checked;
+        const votoBlanco = document.querySelector('.voto-blanco input').checked;
+
+        if (!selectedCandidate && !votoNulo && !votoBlanco) {
+            event.preventDefault(); // Evita que el formulario se envíe
+
+            // Muestra la notificación
+            showNotification('Por favor, selecciona un candidato, voto nulo o voto en blanco antes de enviar.');
+
+            // Oculta la notificación después de 5 segundos
+            setTimeout(function() {
+                hideNotification();
+            }, 5000);
+        }
+    });
+
+    function showNotification(message) {
+        // Crea un elemento para la notificación
+        const notification = document.createElement('div');
+        notification.className = 'notification';
+        notification.textContent = message;
+
+        // Agrega la notificación al cuerpo del documento
+        document.body.appendChild(notification);
+
+        // Oculta la notificación después de 5 segundos
+        setTimeout(function() {
+            document.body.removeChild(notification);
+        }, 5000);
+    }
+
+    function hideNotification() {
+        // Oculta la notificación eliminando el elemento
+        const notification = document.querySelector('.notification');
+        if (notification) {
+            document.body.removeChild(notification);
+        }
+    }
+});
+
+</script>
+
+
+</body>
+</html>

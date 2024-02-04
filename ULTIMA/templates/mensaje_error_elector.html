@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <Style>
+        body{
+             background: linear-gradient(90deg,#112124,#2a6c71,#112124);
+        }
+        p{
+            color: white;
+            text-align: center;
+            font-size: 60px;
+            margin: 20px;
+            flex-wrap: wrap;
+        }
+        button {
+            opacity: 0;
+        }
+    </Style>
+    
+    <form action="{{ url_for('contraseña_incorrecta_elector') }}" method="post">
+        <p>NO SE ENCUENTRA ACTUALMENTE REGISTRADO EN EL PADRÓN ELECTORAL O CONTRASEÑA INCORRECTA</p>
+        <Button type="submit" id="presionar_automatico"></Button>
+        <script>
+            document.getElementById("presionar_automatico").click();
+        </script>
+    </form>
+</body>
+</html>
