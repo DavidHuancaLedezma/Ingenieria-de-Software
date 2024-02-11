@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Elecciones</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style_resultados.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='image/caja.png') }}" type="image/x-icon">
+
+</head>
+<body>
+    <header class="dontPrint">
+    <header class="header">
+        <a href="#" class="header_a">
+            <img src="{{ url_for('static', filename='image/icono.png') }}" alt="icono" class="dontPrint">
+            <h2>Elecciones</h2>
+        </a>
+    </header>
+    </header>
+    <main>
+        <div class="parte-izquierda">
+           <div class="datos c1">
+            <img src="{{ url_for('static', filename='image/luis_arce.jpg') }}" class="imgOp">
+            <h2>Luis Arce </h2>
+            <h2>MAS</h2>
+            <h2>{{porcentaje_votos['candidato_1']}}%</h2>
+            <h2>{{votos_conseguidos['candidato_1']}}</h2>
+           </div>
+        </div>
+        <div class="casi-izquierda">
+            <div class="datos c2">
+                <img src="{{ url_for('static', filename='image/chi.png') }}" class="imgOp">
+                <h2>Chi </h2>
+                <h2>PDC</h2>
+                <h2>{{porcentaje_votos['candidato_2']}}%</h2>
+                <h2>{{votos_conseguidos['candidato_2']}}</h2>
+               </div>
+        </div>
+        <div class="parte-nulo">
+            <div class="datos nulo">
+                <img src="{{ url_for('static', filename='image/nulo.png') }}" class="imgOp">
+                <h2>Votos </h2>
+                <h2>Nulos </h2>
+                <h2>{{porcentaje_votos['voto_nulo']}}%</h2>
+                <h2>{{votos_conseguidos['voto_nulo']}}</h2>
+               </div>
+        </div>
+        <div class="parte-blanco">
+            <div class="datos blnco">
+                <img src="{{ url_for('static', filename='image/votoBlanco.png') }}" class="imgOp">
+                <h2>Votos </h2>
+                <h2>En Blanco</h2>
+                <h2>{{porcentaje_votos['voto_blanco']}}%</h2>
+                <h2>{{votos_conseguidos['voto_blanco']}}</h2>
+               </div>
+        </div>
+    </main>
+    <div class="datos-totales">
+        <div class="impresion-totales">
+            <h2>TOTAL DE VOTOS {{total}}</h2>
+            <h2>TOTAL DE PORCENTAJE 100%</h2>
+        </div>
+    </div>
+    <div class="dontPrint">
+    <div class="volver-e-imprimir">
+        <div class="vei">
+            <form action="{{ url_for('salir_de_resultados') }}" method="post">
+                <button type="submit" class="volver css-button-shadow-border--grey">Volver</button>
+            </form>
+            <button onclick="window.print();" class="imprimir css-button-shadow-border--grey">Imprimir</button>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

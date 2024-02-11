@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Elecciones</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles_corte_electoral.css') }}">
+    <link rel="shortcut icon" href="{{url_for('static',filename='image/caja.png') }}" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="header_a">
+            <img src="{{url_for('static',filename='image/icono.png') }}" alt="icono" class="icono">
+            <h2>Elecciones</h2>
+        </a>
+        <nav class="nav">
+            <!--a href="#">Inicio</a-->
+            <a href="{{ url_for('login_elector') }}">Elector</a-->
+            <!--a href="#">Administrador</a-->
+            <a href="#">Corte Electoral</a-->
+        </nav>
+    </header>
+    <section class="section">
+        <div class="container">
+            <h2 class="subtitulo-inicio">
+                <!--"¡Bienvenido al Centro de Elecciones! Tu voz, tu voto, tu elección."-->
+                Corte Electoral para asegurar la legitimidad y confidencialidad en el desarrollo de las elecciones.
+            </h2>
+            <p class="parrafo-inicio">
+                <!--Este es tu espacio para participar activamente en el proceso democrático. Recuerda, cada elección es una oportunidad para influir en el rumbo de nuestra comunidad. Tu participación es crucial, así que toma tu tiempo, infórmate y elige con sabiduría.-->
+                Su participación es crucial para garantizar la integridad, transparencia y legalidad de este importante evento democrático. Juntos, trabajamos para preservar la confianza en nuestro sistema electoral.
+            </p>
+        </div>
+        <div class="wraper-login">
+            <!--<h2 class="subtitulo-inicio-elector">
+                ELECTOR
+            </h2>-->
+            <h2 class="subtitulo-inicio-elector">
+                CORTE ELECTORAL
+            </h2>
+            <form action="{{ url_for('ingresar_a_resultados') }}" method="post">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+                    <input type="text" id="ci" name="ci" required>
+                    <label>Introduzca su CI</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input type="password" id="contra" name="contra" required>
+                    <label>Introduzca su contraseña</label>
+                </div>
+                <button type="submit" class="btn">Iniciar Sesion</button>
+            </form>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

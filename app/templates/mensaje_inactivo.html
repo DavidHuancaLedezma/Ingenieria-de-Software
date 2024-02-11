@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de eleciones</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='Style_mensaje_inactivo.css') }}">
+</head>
+<body>
+    <form action="{{ url_for('voto_ya_realizado') }}" method="post">
+        <p>USTED SE ENCUENTRA ACTUALMENTE INACTIVO POR QUE YA VOTO ANTERIORMENTE </p>
+        <Button type="submit" id="presionar_automatico"></Button>
+        <script>
+            document.getElementById("presionar_automatico").click();
+        </script>
+    </form>
+</body>
+</html>

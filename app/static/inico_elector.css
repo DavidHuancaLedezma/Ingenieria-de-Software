@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+img{
+    height: 70px;
+    margin-right: 10px;
+}
+a{
+    text-decoration: none;
+    color:#fff;
+}
+
+.header{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px;
+    background-color: #020202;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+
+}
+.header_a {
+    display: flex;
+    align-items: center;
+}
+.nav a{
+   position: relative;
+   margin-right: 20px;
+   font-size: 1.1em;
+}
+.header_a h2:hover{
+    color: aqua;
+}
+.nav a:hover{
+    color: #e9da0c;
+}
+/*hasta aca el encabezamiento en css*/
+
+.section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background:linear-gradient(90deg, #040f1e, #2a6f71,#040f1e);
+    box-shadow: 0 8px 10px rgba(0,0,0,.5);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 50px;
+}
+.section .container{
+    max-width: 500px;
+    color: #fff;
+}
+.container .subtitulo-inicio{
+    font-size: 2em;
+    letter-spacing: .03em;
+}
+.container .parrafo-inicio{
+    margin: 20px 0 40px;
+    font-size: 1.2em;
+    letter-spacing: .03em;
+}
+/*hasta aca la descripcion*/
+/*comienzo datos elector*/
+.wraper-login{
+    width: 430px;
+}
+.wraper-login .subtitulo-inicio-elector{
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+.wraper-login .input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 40px 0;
+}
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 1px solid #fff;
+    outline: none;
+    border-radius: 40px;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 25px 0 45px;
+}
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 45px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+.input-box input:focus~label,
+.input-box input:valid~label {
+    font-size: .8em;
+    top: -14px;
+    left: 17px;
+}
+
+.input-box .icon{
+    position: absolute;
+    top: 14px;
+    left: 15px;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.wraper-login .btn{
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    background: linear-gradient(red,#EDBB99);
+    /*background: linear-gradient(90deg,#112124, #2a6c71 ,#112124);*/
+    box-shadow: 0 8px 10px rgba(0,0,0,.5);
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+}
+/*terminacion login*/
+@media (max-width: 700px){
+    header{
+        flex-direction: column;
+    }
+    nav{
+        padding: 10px 0px;
+    }
+}

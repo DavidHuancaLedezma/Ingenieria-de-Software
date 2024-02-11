@@ -4,12 +4,12 @@ body {
 h1 {
     text-align: center;
     margin: 0;
-    color: white;
+    color: black;
 }
 h3 {
     margin: 0;
     text-align: center;
-    color: white;
+    color: black;
 }
 hr {
     width: 250px;
@@ -20,33 +20,39 @@ main {
 
 }
 .datos {
+
     width: 370px;
 }
 
 footer {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*flex-wrap: wrap;*/
 }
 p {
-    margin: 35px;
-    color: white;
+    margin: 25px;
+    color: black;
+    font-size: 20px
 }
 button {
     margin: 0px 40px 0;
     width: 170px;
     height: 50px;
-    
+
 }
 .regresar {
-    background: linear-gradient(90deg,#112124,#2a6c71,#112124);
+    background: linear-gradient(90deg,#CB4335,#FADBD8,#CB4335);
     border-radius: 20px;
     color: white;
 }
 .siguiente {
-    background: linear-gradient(90deg,#112124,#2a6c71,#112124);
-    border-radius: 20px;
+
+    background: linear-gradient(red,#EDBB99);
+    border-radius: 40px;
     color: white;
+    font-size: 30px;
 }
 .margen {
     display: flex;
@@ -54,6 +60,7 @@ button {
     padding: 25px;
 }
 .contenedor {
+
     border: solid 5px #2a6c71;
     box-shadow: 0px 0px 30px #2a6c71,
                 0px 0px 30px #2a6c71 inset;
@@ -61,7 +68,7 @@ button {
     width: 650px;
     height: 500px;
     border-radius: 15px;
-
+    background-color: white;
 
 }
 img {
@@ -73,12 +80,15 @@ img {
     height: 60px;
     margin: 0 150px 0 95px;
     animation: float 2s linear infinite;
-    
+
+}
+.borde{
+    border: 5px solid black;
 }
 .caja_votacion {
     width: 60px;
     height: 60px;
-    margin: 0 95px 0 10px;
+    /*margin: 0 95px 0 10px;*/
     animation: float 2s linear infinite;
 }
 @keyframes float {
@@ -106,12 +116,12 @@ img {
     }
     p {
         margin: 35px 5px 35px;
-        font-size: 13px;
+        font-size: 18px;
     }
     main {
         display: flex;
         flex-direction: column-reverse;
-        
+
     }
     h3 {
         text-align: center;
@@ -120,14 +130,14 @@ img {
         margin: 0;
         width: 140px;
         height: 45px;
-        
+
     }
     .imagen_de_salir {
         width: 55px;
         height: 55px;
         margin: 0 50px 0 40px;
         animation: float 2s linear infinite;
-        
+
     }
     .caja_votacion {
         width: 55px;
